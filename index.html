@@ -5,81 +5,52 @@
 
 <style>
 :root{
-  --ground:#f4f3f1;
-  --surface:#ffffff;
-  --sunk:#e9e7e4;
-  --ink:#16171d;
-  --ink-2:#4a4c56;
-  --ink-3:#7c7f8a;
-  --rule:#dcdad6;
-  --rule-soft:#e7e5e1;
-  --accent:#c1392a;
-  --accent-soft:#f7e6e3;
-  --data:#0c6f5e;
-  --data-soft:#dcefea;
-
+  --ground:#f4f3f1; --surface:#ffffff; --sunk:#e9e7e4;
+  --ink:#16171d; --ink-2:#4a4c56; --ink-3:#7c7f8a;
+  --rule:#dcdad6; --rule-soft:#e7e5e1;
+  --accent:#c1392a; --accent-soft:#f7e6e3;
+  --data:#0c6f5e; --data-soft:#dcefea;
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
   --mono:"JetBrains Mono",Menlo,monospace;
-
-  --col:min(66ch,100%);
-  --wide:min(1120px,100%);
+  --col:min(66ch,100%); --wide:min(1120px,100%);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ground:#111218;
-    --surface:#191b22;
-    --sunk:#20232c;
-    --ink:#eeeff3;
-    --ink-2:#a8abb6;
-    --ink-3:#7b7f8b;
-    --rule:#2b2e38;
-    --rule-soft:#23262f;
-    --accent:#ff6b58;
-    --accent-soft:#301b18;
-    --data:#4fc9ae;
-    --data-soft:#122b26;
+    --ground:#111218; --surface:#191b22; --sunk:#20232c;
+    --ink:#eeeff3; --ink-2:#a8abb6; --ink-3:#7b7f8b;
+    --rule:#2b2e38; --rule-soft:#23262f;
+    --accent:#ff6b58; --accent-soft:#301b18;
+    --data:#4fc9ae; --data-soft:#122b26;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#111218;
-  --surface:#191b22;
-  --sunk:#20232c;
-  --ink:#eeeff3;
-  --ink-2:#a8abb6;
-  --ink-3:#7b7f8b;
-  --rule:#2b2e38;
-  --rule-soft:#23262f;
-  --accent:#ff6b58;
-  --accent-soft:#301b18;
-  --data:#4fc9ae;
-  --data-soft:#122b26;
+  --ground:#111218; --surface:#191b22; --sunk:#20232c;
+  --ink:#eeeff3; --ink-2:#a8abb6; --ink-3:#7b7f8b;
+  --rule:#2b2e38; --rule-soft:#23262f;
+  --accent:#ff6b58; --accent-soft:#301b18;
+  --data:#4fc9ae; --data-soft:#122b26;
 }
-
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.1;letter-spacing:-.03em;text-wrap:balance;font-weight:800}
-h1{font-size:clamp(2.6rem,7vw,5rem)}
+h1{font-size:clamp(2.5rem,6.6vw,4.6rem)}
 h2{font-size:clamp(1.5rem,3.2vw,2.1rem)}
 h3{font-size:1.1rem;font-weight:700;letter-spacing:-.015em}
 p{margin:0}
 a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
-
 .page{max-width:var(--wide);margin:0 auto;padding:0 24px 100px}
 .col{max-width:var(--col)}
 .label{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
 
-/* hero */
 .hero{padding:88px 0 56px;display:flex;flex-direction:column;gap:22px}
 .hero h1 span{color:var(--accent)}
-.thesis{font-size:1.24rem;line-height:1.5;color:var(--ink-2);max-width:34ch}
+.thesis{font-size:1.22rem;line-height:1.5;color:var(--ink-2);max-width:36ch}
 .meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:.76rem;color:var(--ink-3);padding-top:18px;border-top:1px solid var(--rule)}
 
-/* section */
 section{padding-top:60px}
 .sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
 
-/* capabilities */
 .caps{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
 @media(min-width:820px){.caps{grid-template-columns:repeat(3,1fr)}}
 .cap{background:var(--surface);padding:26px}
@@ -87,17 +58,6 @@ section{padding-top:60px}
 .cap p{font-size:.95rem;color:var(--ink-2)}
 .cap .tools{margin-top:14px;font-family:var(--mono);font-size:.7rem;color:var(--ink-3);line-height:1.9}
 
-/* metric strip */
-.metrics{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:26px}
-@media(min-width:640px){.metrics{grid-template-columns:repeat(4,1fr)}}
-.metric{background:var(--surface);padding:22px}
-.metric .v{font-family:var(--display);font-size:2.3rem;font-weight:800;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
-.metric .v.up{color:var(--data)}
-.metric .v.down{color:var(--accent)}
-.metric .k{font-size:.88rem;color:var(--ink-2);margin-top:8px}
-.metric .s{font-family:var(--mono);font-size:.66rem;color:var(--ink-3);margin-top:6px;letter-spacing:.06em;text-transform:uppercase}
-
-/* work cards */
 .work{display:grid;gap:18px}
 @media(min-width:820px){.work{grid-template-columns:1fr 1fr}}
 .card{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:26px;display:flex;flex-direction:column;gap:12px}
@@ -111,16 +71,14 @@ section{padding-top:60px}
 .tag.lead{background:var(--accent-soft);color:var(--accent)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
 
-/* timeline */
 .timeline{border-top:1px solid var(--rule)}
 .row{display:grid;gap:6px 28px;padding:22px 0;border-bottom:1px solid var(--rule-soft);grid-template-columns:1fr}
-@media(min-width:760px){.row{grid-template-columns:8.5rem 1fr}}
+@media(min-width:760px){.row{grid-template-columns:9.5rem 1fr}}
 .row .when{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);padding-top:.3rem}
 .row h3{margin-bottom:3px}
 .row .where{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.04em;margin-bottom:8px}
 .row p{font-size:.94rem;color:var(--ink-2)}
 
-/* two-col facts */
 .facts{display:grid;gap:26px}
 @media(min-width:720px){.facts{grid-template-columns:1fr 1fr}}
 .fact h3{margin-bottom:12px}
@@ -141,115 +99,90 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 <div class="page">
 
 <header class="hero">
-  <span class="label">Istanbul · Marketing & Creative</span>
-  <h1>I measure demand,<br>then I <span>build</span><br>the thing that meets it.</h1>
-  <p class="thesis">Seven years running SEO, SEM and brand for agencies and product teams — and a production background in 3D and ad creative. The rare part isn't either half. It's that the same person does both.</p>
+  <span class="label">Istanbul · 3D & Rigging</span>
+  <h1>I came to 3D<br>from the <span>metrics</span> side.</h1>
+  <p class="thesis">Rigging, modelling and texturing for games — by someone who started out watching what an app's install numbers did after the creative changed. I know what the asset is for, not just how to build it.</p>
   <div class="meta">
-    <span>Digital marketing since 2017</span>
-    <span>SEO · SEM · Performance</span>
-    <span>3D · Rigging · Ad creative</span>
-    <span>AI search visibility</span>
+    <span>Maya · Blender · Substance</span>
+    <span>Rigging · Modelling · Texturing</span>
+    <span>Mobile game assets</span>
+    <span>App marketing background</span>
   </div>
 </header>
 
 <section>
   <div class="sec-head">
-    <span class="label">What I actually do</span>
-    <h2>Three things, one loop</h2>
+    <span class="label">What I do</span>
+    <h2>Three things that keep meeting</h2>
   </div>
   <div class="caps">
     <div class="cap">
-      <h3>Find the demand</h3>
-      <p>Keyword and intent research, competitor and ad-library teardowns, and — increasingly — measuring whether a brand appears at all when a buyer asks an AI assistant instead of a search engine.</p>
-      <div class="tools">SEO · SEM · GEO/AEO<br>Google Analytics · Search Console<br>Competitive research</div>
+      <h3>Rigging & character setup</h3>
+      <p>The part of the pipeline I moved toward deliberately. Skeletons, skinning, deformation, controls — rigs another artist can pick up and animate without asking me how they work.</p>
+      <div class="tools">Maya (primary) · Blender<br>Skinning &amp; deformation<br>Game-ready character setup</div>
     </div>
     <div class="cap">
-      <h3>Make the creative</h3>
-      <p>Concept through delivery. Ad creative in every aspect ratio a platform asks for, product and character work in 3D, and enough production skill to rebuild a failing hook the same day instead of briefing it out.</p>
-      <div class="tools">Blender · After Effects<br>Rigging · Character animation<br>16:9 / 9:16 / 1:1 ad creative</div>
+      <h3>Game-ready 3D production</h3>
+      <p>Low-poly modelling, UVs and texturing for mobile — where the polygon budget is real and the difference between a good asset and a bad one is measured on a phone, not in a render.</p>
+      <div class="tools">Modelling · Retopology · UVs<br>Substance 3D Painter · ZBrush<br>Unity / Unreal delivery</div>
     </div>
     <div class="cap">
-      <h3>Read the result</h3>
-      <p>CTR, CPC, CPA, ROAS — and the discipline to let them decide the next round rather than taste. The numbers below are the ones I'd want to be judged on.</p>
-      <div class="tools">Performance analysis<br>Reporting & attribution<br>Node · Python · APIs · LLMs</div>
+      <h3>Creative that has a job</h3>
+      <p>I spent my first professional months on the marketing side of a mobile app — reading CPI, CPM and eCPM, and working on what moved installs. That's why I ask what an asset is supposed to do before I make it.</p>
+      <div class="tools">Performance creative<br>Premiere Pro · After Effects<br>Node · Python · LLM APIs</div>
     </div>
   </div>
-
-  <div class="metrics">
-    <div class="metric">
-      <div class="v up">+35%</div>
-      <div class="k">Organic traffic</div>
-      <div class="s">GabbleStudios · SEO & content</div>
-    </div>
-    <div class="metric">
-      <div class="v up">+30%</div>
-      <div class="k">Online sales</div>
-      <div class="s">GabbleStudios · SEO & SEM</div>
-    </div>
-    <div class="metric">
-      <div class="v down">−25%</div>
-      <div class="k">Ad spend, same output</div>
-      <div class="s">GabbleStudios · campaign optimisation</div>
-    </div>
-    <div class="metric">
-      <div class="v up">+40%</div>
-      <div class="k">Lead generation</div>
-      <div class="s">Login Yazılım · data-driven SEM</div>
-    </div>
-  </div>
-  <p class="pull" style="margin-top:26px">The spend reductions matter more than the growth numbers. Cutting cost while holding volume is the harder problem, and it's the one that shows whether someone is reading the data or just making things.</p>
+  <p class="pull" style="margin-top:26px">Most 3D artists learn the craft and then meet the metrics. I met the metrics first, which is a strange order — and it turns out to be the useful one.</p>
 </section>
 
 <section>
   <div class="sec-head">
     <span class="label">Selected work</span>
-    <h2>Four projects worth explaining</h2>
+    <h2>Four things worth explaining</h2>
   </div>
   <div class="work">
 
     <div class="card">
+      <div class="top"><h3>Anima Okul — 3D Artist</h3><span class="yr">Oct 2024 — Jan 2026</span></div>
+      <div class="tags"><span class="tag lead">Where I became a rigger</span></div>
+      <p>Texturing, UV editing and modelling on production work, mostly in Maya. This is where I got deep enough into the animation toolset that rigging stopped being a step in someone else's pipeline and became the thing I wanted to do.</p>
+      <ul>
+        <li>3D texturing and UV editing across production assets</li>
+        <li>Modelling to spec, in Maya primarily and Blender where it suited</li>
+        <li>Moved from asset production into rigging and character setup</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="top"><h3>MakeMake — 3D Artist</h3><span class="yr">Apr 2023 — Sep 2024</span></div>
+      <div class="tags"><span class="tag">Mobile games</span><span class="tag">Internship</span></div>
+      <p>Game assets for mobile titles, built to the lowest polygon count that still held its detail. Eighteen months of the constraint that teaches you the most: it has to look right and it has to run on a phone.</p>
+      <ul>
+        <li>Low-poly modelling for mobile game assets</li>
+        <li>Textures and UV maps in Blender and Substance 3D Painter</li>
+        <li>Came in through AnimaOkul, which placed me at their mobile game studio after the programme</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="top"><h3>Unity Asset Store</h3><span class="yr">Ongoing</span></div>
+      <div class="tags"><span class="tag">Own product</span></div>
+      <p>Publishing 3D assets commercially rather than delivering them to a single client. Different discipline: the asset has to be understandable and usable by a developer I will never speak to.</p>
+      <ul>
+        <li>Asset production, optimisation and packaging</li>
+        <li>Listing, positioning and merchandising — the marketing side of my own work</li>
+      </ul>
+    </div>
+
+    <div class="card">
       <div class="top"><h3>Yanıtta — AI search visibility</h3><span class="yr">2026</span></div>
-      <div class="tags"><span class="tag lead">Product · built end to end</span></div>
-      <p>A tool that answers a question almost no brand can currently answer: <em>when a customer asks ChatGPT, Gemini or Perplexity for a recommendation, do you appear?</em></p>
+      <div class="tags"><span class="tag lead">Built end to end</span></div>
+      <p>A tool that answers a question most brands can't: when a customer asks ChatGPT, Gemini or Perplexity for a recommendation, do you appear at all? Not a 3D project — a product I designed and shipped myself.</p>
       <ul>
-        <li>Generates the buyer-intent questions a real customer would ask, in the brand's own language</li>
-        <li>Queries three engines, detects brand and competitor mentions inside the answers, scores visibility, average position and share of voice</li>
-        <li>Maps which third-party domains the models cite — the actionable part, since AI answers are assembled from other people's pages, not yours</li>
-        <li>Turkish-first brand matching: inflection changes the surface form of a name, and naive matching produces both false positives and misses</li>
-      </ul>
-      <div class="tools" style="font-family:var(--mono);font-size:.7rem;color:var(--ink-3);margin-top:4px">Node · Express · SQLite · multi-provider LLM layer · scheduled scans</div>
-    </div>
-
-    <div class="card">
-      <div class="top"><h3>Mobile game marketing</h3><span class="yr">2021 — present</span></div>
-      <div class="tags"><span class="tag">GabbleStudios</span><span class="tag">1M+ downloads</span></div>
-      <p>Marketing for a mobile title that passed a million downloads — working across both the advertising and the art side, which is unusual and is why the iteration loop stayed short.</p>
-      <ul>
-        <li>SEO strategy and content planning: organic traffic up 35%</li>
-        <li>Campaign optimisation: advertising spend down 25%</li>
-        <li>Targeted SEO and SEM: online sales up 30%</li>
-        <li>Social campaign management and performance reporting</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="top"><h3>Bored Button — ad creative</h3><span class="yr">2023</span></div>
-      <div class="tags"><span class="tag">Gabble Mobile Teknoloji</span></div>
-      <p>Paid ad creative for a mobile product, concept through delivery, iterated against performance feedback rather than taste.</p>
-      <ul>
-        <li>Concept development in 16:9, 9:16 and 1:1 before production</li>
-        <li>Video delivery in all three aspect ratios</li>
-        <li>Seven milestones of iteration — the revisions were the point, not the exception</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="top"><h3>MakeMakeX — 3D assets</h3><span class="yr">Ongoing</span></div>
-      <div class="tags"><span class="tag">Unity Asset Store</span></div>
-      <p>Building and publishing 3D assets commercially on the Unity Asset Store — my own product, sold into an international developer market rather than delivered to a single client.</p>
-      <ul>
-        <li>Asset production: modelling, rigging, game-ready optimisation</li>
-        <li>Store listing, positioning and merchandising — the marketing side of a product I also made</li>
+        <li>Generates the questions a real buyer would ask, then queries three engines</li>
+        <li>Detects brand and competitor mentions, scores visibility and share of voice</li>
+        <li>Turkish-first matching: inflection changes a name's surface form, so naive matching fails</li>
+        <li>Node, Express, SQLite, multi-provider LLM layer, 32 passing tests</li>
       </ul>
     </div>
 
@@ -258,86 +191,80 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 <section>
   <div class="sec-head">
-    <span class="label">Career</span>
+    <span class="label">Path</span>
     <h2>How I got here</h2>
   </div>
   <div class="timeline">
-
     <div class="row">
-      <div class="when">2021 — present</div>
+      <div class="when">Oct 2024 — Jan 2026</div>
       <div>
-        <h3>Marketing & Creative</h3>
-        <div class="where">GabbleStudios · Istanbul</div>
-        <p>Social media campaigns and creative-team collaboration for a mobile game portfolio, including a title past 1M downloads. Owned SEO strategy and content planning (+35% organic traffic), campaign performance reporting, and paid optimisation that cut advertising spend 25% while lifting online sales 30%.</p>
+        <h3>3D Artist</h3>
+        <div class="where">Anima Okul · Istanbul</div>
+        <p>Texturing, UV editing and modelling. Learned the animation toolset properly, which is what turned me toward rigging.</p>
       </div>
     </div>
-
     <div class="row">
-      <div class="when">2019 — 2021</div>
+      <div class="when">Apr 2023 — Sep 2024</div>
       <div>
-        <h3>Marketing Communications Manager</h3>
-        <div class="where">ReputeUs Social Media Agency · Istanbul</div>
-        <p>Managed social channels, YouTube and digital media partnerships. Owned the annual marketing communications budget and managed digital and BTL agencies. Built brand positioning strategies and the audience-specific messaging that carried them.</p>
+        <h3>3D Artist</h3>
+        <div class="where">MakeMake · Istanbul, Levent</div>
+        <p>Low-poly game assets for mobile, with textures and UVs in Blender and Substance. Placed here through AnimaOkul after finishing their programme.</p>
       </div>
     </div>
-
     <div class="row">
-      <div class="when">2017 — 2019</div>
+      <div class="when">2023 — 2024</div>
       <div>
-        <h3>Marketing Specialist</h3>
-        <div class="where">Login Yazılım · Istanbul</div>
-        <p>Created and implemented digital marketing strategy across social and content. Data-driven SEM lifted lead generation 40% and reduced advertising cost 30%; strategic content work raised engagement 30%, and a rebrand campaign lifted sales 25%. Also ran sponsorship and partnership planning.</p>
+        <h3>3D Animation &amp; Filmmaking, 9 months on site</h3>
+        <div class="where">AnimaOkul</div>
+        <p>Autodesk Maya, Fusion, Substance 3D Painter, ZBrush. The deliberate career change: from an engineering degree into production.</p>
       </div>
     </div>
-
     <div class="row">
-      <div class="when">2015 — 2016</div>
+      <div class="when">Apr — Jun 2022</div>
       <div>
-        <h3>Volunteer — Social Media & Campaigns</h3>
-        <div class="where">Greenpeace Türkiye</div>
-        <p>Produced social content and supported campaign processes: green-space protection awareness campaigns, and an active role in projects defending nature and animal rights. The first place I learned that a message has to be built for the person receiving it.</p>
+        <h3>Marketing, mobile apps</h3>
+        <div class="where">ReputeUs Social Media Agency · Istanbul, Etiler</div>
+        <p>Analysed and reported CPI, CPM and eCPM, worked on improving installs for the Zorlu World app, and handled English-to-Turkish translation. Short, but it's where I learned that creative gets judged by a number.</p>
       </div>
     </div>
-
+    <div class="row">
+      <div class="when">Sep 2015 — Oct 2022</div>
+      <div>
+        <h3>Geological Engineering, BSc</h3>
+        <div class="where">Istanbul University · Faculty of Engineering</div>
+        <p>Finished the degree, then changed direction. What survived from it: the habit of building a model and then checking it against what actually happened.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="sec-head">
     <span class="label">Background</span>
-    <h2>Education & languages</h2>
+    <h2>Tools &amp; languages</h2>
   </div>
   <div class="facts">
     <div class="fact">
-      <h3>Education & training</h3>
+      <h3>Toolset</h3>
       <dl>
-        <dt>2015–22</dt><dd><strong>Istanbul University</strong> — Faculty of Engineering, Geological Engineering</dd>
-        <dt>2011–15</dt><dd><strong>AREL Koleji</strong> — High school diploma</dd>
-        <dt>Ongoing</dt><dd><strong>Animation Mentor</strong> — animation fundamentals and body mechanics</dd>
+        <dt>3D</dt><dd>Autodesk Maya (primary), Blender, ZBrush</dd>
+        <dt>Texture</dt><dd>Substance 3D Painter, Photoshop</dd>
+        <dt>Engine</dt><dd>Unity, Unreal Engine</dd>
+        <dt>Motion</dt><dd>Premiere Pro, After Effects, Fusion</dd>
+        <dt>Code</dt><dd>Node, Python, LLM APIs</dd>
       </dl>
-      <p style="font-size:.9rem;color:var(--ink-3);margin-top:16px">An engineering degree in a field I didn't go into taught me the thing I use most: build the model, then check it against what actually happened.</p>
+      <p style="font-size:.9rem;color:var(--ink-3);margin-top:16px">Portfolio of 3D work: <a href="https://www.artstation.com/boraustunisik">artstation.com/boraustunisik</a></p>
     </div>
     <div class="fact">
       <h3>Languages</h3>
       <div class="bars">
         <div class="barrow"><span>Turkish</span><span class="bar"><i style="width:100%"></i></span><span class="lvl">Native</span></div>
-        <div class="barrow"><span>English</span><span class="bar"><i style="width:82%"></i></span><span class="lvl">Proficient</span></div>
-        <div class="barrow"><span>Spanish</span><span class="bar"><i style="width:62%"></i></span><span class="lvl">Advanced</span></div>
+        <div class="barrow"><span>English</span><span class="bar"><i style="width:85%"></i></span><span class="lvl">Full proficiency</span></div>
+        <div class="barrow"><span>Spanish</span><span class="bar"><i style="width:30%"></i></span><span class="lvl">Beginner</span></div>
       </div>
-      <h3 style="margin-top:26px">Toolset</h3>
-      <p style="font-size:.93rem;color:var(--ink-2)">Google Analytics, Search Console, Meta and Google Ads, Blender, After Effects, Unity, Figma, Node, Python, and the LLM APIs — used to build tools, not just to write copy.</p>
+      <h3 style="margin-top:26px">Where I'm strongest</h3>
+      <p style="font-size:.93rem;color:var(--ink-2)">Rigging and character setup, game-ready asset production for mobile, and work where the creative decision and the performance number belong to the same person. Less strong on: film-grade cinematic animation and enterprise VFX pipelines — I'd say so up front rather than three weeks in.</p>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="sec-head">
-    <span class="label">Working together</span>
-    <h2>What I'm good for</h2>
-  </div>
-  <div class="col">
-    <p style="color:var(--ink-2)">Strongest on: SEO and SEM with a number attached to it, AI search visibility measurement and the strategy that follows from it, performance creative where the same person can concept, build and iterate, and marketing automation using LLMs and APIs.</p>
-    <p style="color:var(--ink-2);margin-top:16px">Less strong on: enterprise link-building networks, and any single generative-video tool I'd have to claim deep production hours in. I'd rather say that up front than three weeks in.</p>
   </div>
 </section>
 
@@ -345,7 +272,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   <span>Bora Üstünışık</span>
   <span>Istanbul, Türkiye</span>
   <span><a href="mailto:ustunisik.bora@gmail.com">ustunisik.bora@gmail.com</a></span>
-  <span><a href="https://www.linkedin.com/in/bora-üstünışık-5197b3187">LinkedIn</a></span>
+  <span><a href="https://www.artstation.com/boraustunisik">ArtStation</a></span>
+  <span><a href="https://www.linkedin.com/in/boraustunisik/">LinkedIn</a></span>
 </footer>
 
 </div>
