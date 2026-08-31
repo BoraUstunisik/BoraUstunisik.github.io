@@ -199,14 +199,14 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     </div>
 
     <div class="card">
-      <div class="top"><h3>Rig Doctor — Blender add-on</h3><span class="yr">2026</span></div>
-      <div class="tags"><span class="tag lead">Own product</span><span class="tag">Rigging tooling</span></div>
-      <p>A pre-export checker for rigged characters. It finds the twenty or so problems that actually break Unity and Unreal import — and it exists because I kept hitting them myself.</p>
+      <div class="top"><h3>Two Blender add-ons, open source</h3><span class="yr">2026</span></div>
+      <div class="tags"><span class="tag lead">Own tooling</span><span class="tag">Pipeline</span></div>
+      <p>Both exist because I kept hitting the same problems myself, and neither is a toy — they are tested, documented, and running in my own work.</p>
       <ul>
-        <li>Twenty checks across scene, transforms, geometry, UV, rig and skinning, each graded and each explaining what it will do downstream</li>
-        <li>One-click fixes only where the fix is unambiguous; n-gons and missing UVs stay a report line rather than a guess</li>
-        <li>Runs headless too, exit code 1 on any error, so it gates an export step in a build script</li>
-        <li>33 assertions against a deliberately broken rig. Tested on Blender 3.4.1 and 5.0</li>
+        <li><a href="https://github.com/BoraUstunisik/rig-doctor"><strong>Rig Doctor</strong></a> — twenty pre-export checks across scene, transforms, geometry, UV, rig and skinning. Each finding says what it will do downstream, not just what it is. One-click fixes only where the fix is unambiguous; n-gons and missing UVs stay a report line rather than a guess. 33 assertions against a deliberately broken rig.</li>
+        <li><a href="https://github.com/BoraUstunisik/engine-export"><strong>Engine Export</strong></a> — Blender's FBX dialog has forty options; eight decide whether the character lands correctly. Unity and Unreal want opposite values for three of them. Sets them per engine. 46 assertions, including the preset values themselves.</li>
+        <li>Both run headless, so they gate an export step in a build script instead of relying on someone remembering</li>
+        <li>Tested on Blender 3.4.1 and 5.0. GPL-3.0, as Blender add-ons must be</li>
       </ul>
     </div>
 
